@@ -314,13 +314,13 @@ elseif((isset($_GET['server'])) && ($cluster = $_ini->cluster($_GET['server'])))
 <?php
     # Displaying first 8 servers
     $displayed = 0;
-    foreach($cluster as $server)
+    foreach($cluster as $server_name => $server)
     { ?>
             <div class="line server" style="<?php if($displayed > 8) { echo 'display:none;'; } else { $displayed++; } ?>">
-                <span class="left setting"><?php echo $server['hostname'] . ':' . $server['port']; ?></span>
-                <span class="right" style="font-weight:bold;"><a href="index.php?server=<?php echo $server['hostname'] . ':' . $server['port']; ?>" class="green">See Server Stats</a></span>
+                <span class="left setting"><?php echo $server_name; ?></span>
+                <span class="right" style="font-weight:bold;"><a href="index.php?server=<?php echo $server_name; ?>" class="green">See Server Stats</a></span>
                 <div class="line" style="margin-left:5px;">
-                    <?php echo ($status[$server['hostname'] . ':' . $server['port']] != '') ? 'Version ' . $status[$server['hostname'] . ':' . $server['port']] . ', Uptime : ' . Library_Data_Analysis::uptime($uptime[$server['hostname'] . ':' . $server['port']]) : 'Server did not respond'; ?>
+                    <?php echo ($status[$server_name] != '') ? 'Version ' . $status[$server_name] . ', Uptime : ' . Library_Data_Analysis::uptime($uptime[$server_name]) : 'Server did not respond'; ?>
                 </div>
             </div>
 <?php
