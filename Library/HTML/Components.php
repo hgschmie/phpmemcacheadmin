@@ -52,7 +52,7 @@ class Library_HTML_Components
             foreach($servers as $server_name => $servers)
             {
                 $serverList .= '<option value="' . $server_name . '" ';
-                $serverList .= ($selected == $server['hostname'] . ':' . $server['port']) ? 'selected="selected"' : '';
+                $serverList .= ($selected == $server_name) ? 'selected="selected"' : '';
                 $serverList .= '>&nbsp;&nbsp;-&nbsp;' . $server_name . '</option>';
             }
         }
