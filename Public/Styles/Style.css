@@ -155,9 +155,9 @@ hr {
 	border-width: 1px;
     border-style: solid;
     border-color: #9c3c36;
-	background: #B5463F;
+	background: white;
 	font-weight: bold;
-	color: #fff
+	color: black
 }
 
 .button {
